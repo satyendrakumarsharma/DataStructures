@@ -10,11 +10,11 @@ public class LinkedList<E> implements List<E> {
 
 	private Node<E> head;
 
-	private Node<E> last;
+	// private Node<E> last;
 
 	private int size = 0;
 
-	private final class Node<T> {
+	private static final class Node<T> {
 		private T data;
 		private Node<T> next;
 
@@ -42,7 +42,7 @@ public class LinkedList<E> implements List<E> {
 			pos.next = newElement;
 		}
 		size++;
-		last = newElement;
+		// last = newElement;
 	}
 
 	@Override
@@ -93,7 +93,6 @@ public class LinkedList<E> implements List<E> {
 		if (head != null && node != null) {
 			if (node == head) {
 				head = node.next;
-				return;
 			}
 			while (!pos.equals(node)) {
 				if (isFirst) {
@@ -105,6 +104,7 @@ public class LinkedList<E> implements List<E> {
 			}
 			posPre.next = pos.next;
 		}
+		size--;
 	}
 
 	@Override
