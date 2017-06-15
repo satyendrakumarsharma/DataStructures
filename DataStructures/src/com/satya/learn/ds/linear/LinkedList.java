@@ -14,15 +14,6 @@ public class LinkedList<E> implements List<E> {
 
 	private int size = 0;
 
-	private static final class Node<T> {
-		private T data;
-		private Node<T> next;
-
-		public Node(T e) {
-			this.data = e;
-		}
-	}
-
 	public LinkedList() {
 	}
 
