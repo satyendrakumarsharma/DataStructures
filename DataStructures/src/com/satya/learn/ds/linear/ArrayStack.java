@@ -6,7 +6,7 @@ package com.satya.learn.ds.linear;
  * @author Satyendra
  *
  */
-public class StackWithArray<E> implements Stack<E> {
+public class ArrayStack<E> implements Stack<E> {
 
 	private static final int DEFAULT_STACK_SIZE = 10;
 	private int maxStackSize;
@@ -15,11 +15,11 @@ public class StackWithArray<E> implements Stack<E> {
 
 	private int topIndex = -1;
 
-	public StackWithArray() {
+	public ArrayStack() {
 		this(DEFAULT_STACK_SIZE);
 	}
 
-	public StackWithArray(int maxSize) {
+	public ArrayStack(int maxSize) {
 		elements = new Object[maxSize];
 		this.maxStackSize = maxSize;
 	}

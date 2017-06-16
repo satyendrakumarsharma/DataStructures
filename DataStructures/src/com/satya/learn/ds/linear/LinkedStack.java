@@ -1,12 +1,12 @@
 package com.satya.learn.ds.linear;
 
 /**
- * Implementation of stack using a linked-list.
+ * Implementation of stack using a linked nodes.
  * 
  * @author Satyendra
  *
  */
-public class StackWithLinkedList<E> implements Stack<E> {
+public class LinkedStack<E> implements Stack<E> {
 
 	private Node<E> top;
 

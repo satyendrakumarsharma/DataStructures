@@ -3,7 +3,7 @@ package com.satya.learn.ds.linear;
 import java.util.Arrays;
 
 /**
- * Implementation of ArrayList.
+ * Implementation of dynamically growing list using array.
  * 
  * @author Satyendra
  *

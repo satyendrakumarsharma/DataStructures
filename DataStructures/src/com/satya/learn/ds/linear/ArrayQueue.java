@@ -4,11 +4,10 @@ package com.satya.learn.ds.linear;
  * Implementation of queue using an array.<br/>
  * Default size of queue is 10.<br/>
  * 
- * 
  * @author Satyendra
  *
  */
-public class QueueWithArray<E> implements Queue<E> {
+public class ArrayQueue<E> implements Queue<E> {
 
 	private static final int DEFAULT_QUEUE_SIZE = 10;
 
@@ -22,11 +21,11 @@ public class QueueWithArray<E> implements Queue<E> {
 
 	private int size = 0;
 
-	public QueueWithArray() {
+	public ArrayQueue() {
 		this(DEFAULT_QUEUE_SIZE);
 	}
 
-	public QueueWithArray(int initSize) {
+	public ArrayQueue(int initSize) {
 		elements = new Object[initSize];
 		maxSize = initSize;
 	}
