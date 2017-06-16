@@ -13,13 +13,15 @@ public interface Queue<E> {
 	boolean enQueue(E e);
 
 	E deQueue();
-	
-	E front();
-	
-	E rear();
-	
+
+	E frontPeek();
+
+	E rearPeek();
+
 	int size();
-	
+
+	boolean isFull();
+
 	boolean isEmpty();
 
 }
