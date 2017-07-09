@@ -8,9 +8,9 @@ package com.satya.learn.ds.linear;
  */
 public class LinkedList<E> implements List<E> {
 
-	private Node<E> head;
+	private LinearNode<E> head;
 
-	// private Node<E> last;
+	// private LinearNode<E> last;
 
 	private int size = 0;
 
@@ -19,9 +19,9 @@ public class LinkedList<E> implements List<E> {
 
 	@Override
 	public void add(E e) {
-		Node<E> pos = head;
+		LinearNode<E> pos = head;
 		// create a new node with given data.
-		Node<E> newElement = new Node<>(e);
+		LinearNode<E> newElement = new LinearNode<>(e);
 		if (head == null) {
 			head = newElement;
 		} else {
@@ -38,7 +38,7 @@ public class LinkedList<E> implements List<E> {
 
 	@Override
 	public E remove(E e) {
-		Node<E> node = getNodeFor(e);
+		LinearNode<E> node = getNodeFor(e);
 		E remElement = null;
 		if (node != null) {
 			unlink(node);
@@ -49,7 +49,7 @@ public class LinkedList<E> implements List<E> {
 
 	@Override
 	public E remove(int index) {
-		Node<E> node = getNodeFor(index);
+		LinearNode<E> node = getNodeFor(index);
 		E remElement = null;
 		if (node != null) {
 			unlink(node);
@@ -58,28 +58,28 @@ public class LinkedList<E> implements List<E> {
 		return remElement;
 	}
 
-	private Node<E> getNodeFor(E e) {
-		Node<E> node = head;
+	private LinearNode<E> getNodeFor(E e) {
+		LinearNode<E> node = head;
 		while (node != null && !node.data.equals(e)) {
 			node = node.next;
 		}
 		return node;
 	}
 
-	private Node<E> getNodeFor(int index) {
+	private LinearNode<E> getNodeFor(int index) {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
 		}
-		Node<E> node = head;
+		LinearNode<E> node = head;
 		for (int i = 0; node != null && i < index; i++) {
 			node = node.next;
 		}
 		return node;
 	}
 
-	private void unlink(Node<E> node) {
-		Node<E> posPre = head;
-		Node<E> pos = head;
+	private void unlink(LinearNode<E> node) {
+		LinearNode<E> posPre = head;
+		LinearNode<E> pos = head;
 		boolean isFirst = true;
 		if (head != null && node != null) {
 			if (node == head) {
@@ -102,7 +102,7 @@ public class LinkedList<E> implements List<E> {
 	public E get(int index) {
 		E element = null;
 		if (head != null) {
-			Node<E> pos = head;
+			LinearNode<E> pos = head;
 			for (int i = 0; i <= index; i++) {
 				element = pos.data;
 				pos = pos.next;
@@ -114,7 +114,7 @@ public class LinkedList<E> implements List<E> {
 	@Override
 	public int indexOf(E e) {
 		if (head != null) {
-			Node<E> pos = head;
+			LinearNode<E> pos = head;
 			int index = 0;
 			// keep traversing till the END of linked-list.
 			while (pos.next != null) {
@@ -137,7 +137,7 @@ public class LinkedList<E> implements List<E> {
 	public String toString() {
 		StringBuilder strArrayList = new StringBuilder("[ ");
 		int i = 0;
-		Node<E> node = head;
+		LinearNode<E> node = head;
 		while (node != null) {
 			strArrayList.append("[" + i++ + "]").append(node.data).append(" ");
 			node = node.next;

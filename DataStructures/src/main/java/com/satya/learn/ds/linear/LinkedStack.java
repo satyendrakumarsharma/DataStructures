@@ -8,13 +8,13 @@ package com.satya.learn.ds.linear;
  */
 public class LinkedStack<E> implements Stack<E> {
 
-	private Node<E> top;
+	private LinearNode<E> top;
 
 	private int size = 0;
 
 	@Override
 	public boolean push(E e) {
-		Node<E> newNode = new Node<>(e);
+		LinearNode<E> newNode = new LinearNode<>(e);
 		if (top != null) {
 			newNode.next = top;
 		}
@@ -27,7 +27,7 @@ public class LinkedStack<E> implements Stack<E> {
 	public E pop() {
 		E elementPopped = null;
 		if (top != null) {
-			Node<E> temp = top;
+			LinearNode<E> temp = top;
 			elementPopped = top.data;
 			top = top.next;
 			temp.next = null;
@@ -54,7 +54,7 @@ public class LinkedStack<E> implements Stack<E> {
 	@Override
 	public String toString() {
 		StringBuilder strArrayList = new StringBuilder("[ ");
-		Node<E> temp = top;
+		LinearNode<E> temp = top;
 		int i = 0;
 		while (temp != null && temp.next != null) {
 			strArrayList.append("[" + i++ + "]").append(temp.data).append(" ");
