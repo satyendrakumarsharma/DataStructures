@@ -22,9 +22,9 @@ public interface Tree<E extends Comparable<E>> {
 
 	public boolean isPresent(E data);
 
-	public void actBFS(E data, Consumer<E> accept);
+	public void actBFS(Consumer<E> accept);
 
-	public void actDFS(E data, Consumer<E> accept);
+	public void actDFS(Consumer<E> accept, DFSTraversal trav);
 
 	public int countOfNodes();
 

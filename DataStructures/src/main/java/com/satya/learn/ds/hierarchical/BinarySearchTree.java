@@ -2,6 +2,9 @@ package com.satya.learn.ds.hierarchical;
 
 import java.util.function.Consumer;
 
+import com.satya.learn.ds.linear.ArrayQueue;
+import com.satya.learn.ds.linear.Queue;
+
 /**
  * Binary Search Tree implementation.
  * 
@@ -201,13 +204,22 @@ public class BinarySearchTree<E extends Comparable<E>> implements Tree<E> {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.satya.learn.ds.hierarchical.Tree#actBFS(java.lang.Object,
-	 * java.util.function.Consumer)
+	 * @see
+	 * com.satya.learn.ds.hierarchical.Tree#actBFS(java.util.function.Consumer)
 	 */
 	@Override
-	public void actBFS(E data, Consumer<E> accept) {
-		// TODO Auto-generated method stub
-
+	public void actBFS(Consumer<E> accept) {
+		Queue<HierarchicalNode<E>> q = new ArrayQueue<>();
+		HierarchicalNode<E> currentNode = root;
+		q.enQueue(currentNode);
+		while (!q.isEmpty()) {
+			HierarchicalNode<E> faceNode = q.deQueue();
+			accept.accept(faceNode.data); // perform action on node
+			if (faceNode.left != null)
+				q.enQueue(faceNode.left);
+			if (faceNode.right != null)
+				q.enQueue(faceNode.right);
+		}
 	}
 
 	/*
@@ -217,7 +229,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements Tree<E> {
 	 * java.util.function.Consumer)
 	 */
 	@Override
-	public void actDFS(E data, Consumer<E> accept) {
+	public void actDFS(Consumer<E> accept, DFSTraversal trav) {
 		// TODO Auto-generated method stub
 
 	}
